@@ -1,6 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.controller;
 
-public class helloWorldBean {
+public class Bean {
 	
 	private String message;
 
@@ -12,7 +12,7 @@ public class helloWorldBean {
 		this.message = message;
 	}
 
-	public helloWorldBean(String message) {
+	public Bean(String message) {
 		super();
 		this.message = message;
 	}

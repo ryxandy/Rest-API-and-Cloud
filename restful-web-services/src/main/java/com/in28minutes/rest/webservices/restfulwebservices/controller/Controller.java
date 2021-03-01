@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorldController {
+public class Controller {
 
 	//Returning a string
 	@GetMapping(path = "/hello")
@@ -18,16 +18,16 @@ public class HelloWorldController {
 	
 	//Returning a bean that will be converted to json
 	@GetMapping(path = "/hello-bean")
-	public helloWorldBean helloWorldBean() {
+	public Bean helloWorldBean() {
 		System.out.println("Convertendo Bean para JSON");
-		return new  helloWorldBean("Olá estou testando conversão de Bean para JSON");
+		return new  Bean("Olá estou testando conversão de Bean para JSON");
 	}
 	
 	//Returning a bean that will be converted to json
 		@GetMapping(path = "/hello-world/path-variable/{name}")
-		public helloWorldBean helloWorldPathVariable(@PathVariable String name) {
+		public Bean helloWorldPathVariable(@PathVariable String name) {
 			System.out.println("Estou usando Path Variable");
-			return new  helloWorldBean(String.format("Hello world, %s", name));
+			return new  Bean(String.format("Hello world, %s", name));
 		}
 	
 	
