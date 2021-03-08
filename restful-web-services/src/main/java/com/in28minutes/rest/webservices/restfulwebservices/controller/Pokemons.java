@@ -1,14 +1,12 @@
 package com.in28minutes.rest.webservices.restfulwebservices.controller;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
+@JsonFilter("pokemonFilter" )
 public class Pokemons {
 
 	private String nome;
 	private String tipo;
-	
-
-	@JsonIgnore
 	private String regiao;
 	
 	

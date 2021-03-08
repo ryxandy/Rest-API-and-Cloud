@@ -26,9 +26,9 @@ public class SwaggerConfig {
  	public static final ApiInfo DEFAULT = new ApiInfo("Awesome API Title ", "Awesome API Description",
  			"1.0", 
  			"urn:tos",
-	          DEFAULT_CONTACT,
-	          "Apache 2.0",
-	          "http://www.apache.org/licenses/LICENSE-2.0",
+	         DEFAULT_CONTACT,
+	         "Apache 2.0",
+	         "http://www.apache.org/licenses/LICENSE-2.0",
 	          new ArrayList<VendorExtension>());
 	
 
