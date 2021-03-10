@@ -7,6 +7,8 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,10 +45,11 @@ public class UserJpaResource {
 	
 	//Creating a new user
 	@PostMapping(path = "/jpa/users")
-	public void createUser(@Valid @RequestBody User user) {
+	public ResponseEntity createUser(@Valid @RequestBody User user) {
 		Date dataAtual = new Date();
 		System.out.println("A new user was added at " + dataAtual.toString());
 		User savedUser = userRepository.save(user);
+	return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
 	//Deleting one user
