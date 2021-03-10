@@ -20,10 +20,6 @@ import com.in28minutes.rest.webservices.restfulwebservices.exception.UserNotFoun
 @RestController
 public class UserJpaResource {
 	//This class is made to deal with rest calls, where i will create the end points
-	
-	@Autowired
-	private UserDaoService service;
-	
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -50,16 +46,13 @@ public class UserJpaResource {
 	public void createUser(@Valid @RequestBody User user) {
 		Date dataAtual = new Date();
 		System.out.println("A new user was added at " + dataAtual.toString());
-		User savedUser = service.save(user);
+		User savedUser = userRepository.save(user);
 	}
 	
 	//Deleting one user
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id) {
-		User user = service.deleteById(id);
-		
-		if (user == null) {
-			throw new UserNotFoundExecption("id- " + id);	
-		}
+		userRepository.deleteById(id);
+		System.out.println("The user was deleted :) ");
 	}
 }
